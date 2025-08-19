@@ -1,0 +1,120 @@
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --primary-color: #4f46e5;
+    --secondary-color: #6366f1;
+    --text-color: #1f2937;
+    --background-color: #fcfbfc;
+
+}
+
+@layer base {
+    html {
+        font-family: var(--font-family);
+    }
+
+    body {
+        background-color: var(--background-color);
+        overflow-x: hidden;
+    }
+}
+
+.input-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #172554;
+    background-color: #f1f5f9;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem; 
+    margin-bottom: 1rem;
+    margin-top: 0.75rem; 
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease-in-out; 
+    outline: none;
+}
+
+.input-box:focus-within {
+    border-color: var(--primary-color);
+}
+
+.btn-primary{
+    width: 100%;
+    font-size: 0.875rem;
+    font-weight: 500; 
+    color: #fff; 
+    background-color: #8b5cf6; 
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.05); 
+    padding: 10px;
+    border-radius: 0.375rem;
+    margin-top: 0.25rem; 
+    margin-bottom: 0.25rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: rgba(139, 92, 246, 0.15);
+    color: #8b5cf6; 
+}
+
+.card{
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(156, 163, 175, 0.1), 0 2px 4px -2px rgba(156, 163, 175, 0.1);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.card-btn{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; 
+    font-size: 12px;
+    font-weight: 500; 
+    color: #374151; 
+    background-color: #f9fafb; 
+    padding-left: 0.4rem; 
+    padding-right: 0.4rem;
+    border-radius: 5px; 
+    border: 1px solid rgba(229, 231, 235, 0.5); 
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.card-btn:hover {
+    color: #8b5cf6;
+    background-color: #f3e8ff;
+}
+
+.add-button {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    gap: 0.375rem; 
+    font-weight: 500; 
+    color: #8b5cf6;
+    white-space: nowrap;
+    background-color: #f3e8ff; 
+    border: 1px solid #ede9fe; 
+    border-radius: 0.5rem; 
+    padding-left: 1rem; 
+    padding-right: 1rem; 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+    cursor: pointer;
+    animation: hover 0.5s ease-in-out;
+}
+
+.add-button:hover {
+    background-color: #ede9fe; 
+    color: #6d28d9; 
+}
+
+.add-btn-fill {
+    background-color: #6d28d9;
+    color: #fff;
+}
