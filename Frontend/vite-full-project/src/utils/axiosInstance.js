@@ -9,6 +9,7 @@ const axiosInstance = axios.create({
         'Content-Type': 'application/json',
         'Accept': 'application/json',
     },
+    withCredentials: false, // Pour les cookies de session si nécessaire
 });
 
 // Add a request interceptor
@@ -33,7 +34,7 @@ axiosInstance.interceptors.response.use(
     },
     (error) => {
         // Receive error responses and handle them
-        if( error.response) {
+        if (error.response) {
             const { status, data } = error.response;
             if (status === 401) {
                 //Redirect to Login
@@ -42,9 +43,25 @@ axiosInstance.interceptors.response.use(
             } else if (status === 500) {
                 console.error(`Erreur 500: ${data.message || 'Erreur interne du serveur, veuillez réessayer plus tard.'}`);
             }
-        } else  if (error.code === 'ECONNABORTED') {
+        } else if (error.code === 'ECONNABORTED') {
             console.error("La requête a expiré, veuillez réessayer.");
         }
+        
+        console.error("Détails de l'erreur:", {
+            message: error.message,
+            config: error.config,
+            response: error.response ? {
+                status: error.response.status,
+                data: error.response.data,
+                headers: error.response.headers
+            } : null,
+            request: error.request ? {
+                responseURL: error.request.responseURL,
+                responseType: error.request.responseType,
+                status: error.request.status
+            } : null
+        });
+
         return Promise.reject(error);
     }
 );
