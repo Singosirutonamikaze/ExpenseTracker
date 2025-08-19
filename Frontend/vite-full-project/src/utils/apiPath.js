@@ -1,4 +1,4 @@
-export const API_BASE_URL = "http://localhost:8000/";
+export const API_BASE_URL = "https://backend-tracker-89ue.onrender.com";
 
 //utils/apiPath.js
 const API_PATHS = {
